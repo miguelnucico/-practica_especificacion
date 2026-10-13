@@ -58,14 +58,14 @@ def leer_parciales():
     parcial1 = float(input("Ingrese la calificación del primer parcial: "))
     parcial2 = float(input("Ingrese la calificación del segundo parcial: "))
     parcial3 = float(input("Ingrese la calificación del tercer parcial: "))
-    return parcial1, parcial2, parcial3
-    
-def calcular_calificacion_final(parcial1, parcial2, parcial3):
-    calificacion_final = parcial1 * 0.3 + parcial2 * 0.3 + parcial3 * 0.4
+    return (parcial1, parcial2, parcial3)
+
+def calcular_calificacion_final(parciales):
+    calificacion_final = parciales[0] * 0.3 + parciales[1] * 0.3 + parciales[2] * 0.4
     return calificacion_final
 
-def determinar_estado(calificacion_final, parcial1, parcial2, parcial3):
-    if parcial1 < 50 or parcial2 < 50 or parcial3 < 50:
+def determinar_estado(calificacion_final, parciales):
+    if parciales[0] < 50 or parciales[1] < 50 or parciales[2] < 50:
         return False
     return calificacion_final >= 70
 

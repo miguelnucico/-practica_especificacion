@@ -24,11 +24,9 @@ def menu_principal():
             estado=determinar_estado(calificacion_final)
             mostrar_resultado(calificacion_final, estado)
         elif opcion == "3":
-            subtotal=leer_subtotal()
-            descuento=calcular_descuento(subtotal)
-            IVA=calcular_IVA(subtotal)
-            total=calcular_total(subtotal, descuento, IVA)
-            mostrar_ticket(subtotal, descuento, IVA, total)
+            compra=leer_subtotal()
+            subtotal, descuento, iva, total=calcular_total(compra)
+            mostrar_ticket(subtotal, descuento, iva, total)
         elif opcion == "4":
             minutos=leer_minutos()
             cobro=calcular_cobro(minutos)

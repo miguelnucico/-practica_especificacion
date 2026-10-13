@@ -62,23 +62,21 @@ def leer_subtotal():
     compra = float(input("Ingrese el monto de la compra: "))
     return compra
 
-def calcular_descuento(compra):
+def calcular_total(compra):
     if compra >= 5000:
-        return compra * 0.2
-    elif compra >= 1000:
-        return compra * 0.1
-    return 0
-
-def calcular_IVA(subtotal):
-    return subtotal * 0.16
-
-def calcular_total(subtotal, iva):
-    return subtotal + iva
+        subtotal = compra - (compra * 0.2)
+        descuento = compra * 0.2
+    else:
+        subtotal = compra - (compra * 0.1)
+        descuento = compra * 0.1
+    iva = subtotal * 0.16
+    total = subtotal + iva
+    return (subtotal, descuento, iva, total)
 
 def mostrar_ticket(subtotal, descuento, iva, total):
-    print("----- TICKET -----")
     print(f"Subtotal: ${subtotal:.2f}")
     print(f"Descuento: ${descuento:.2f}")
     print(f"IVA: ${iva:.2f}")
     print(f"Total: ${total:.2f}")
     print("------------------")
+    

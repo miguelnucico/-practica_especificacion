@@ -54,7 +54,7 @@ def leer_consumo():
     consumo = float(input("Ingrese el consumo del mes en kWh: "))
     return consumo
 
-def calcular_importe(consumo, costo_por_kWh):
+def calcular_importe(consumo):
     if consumo <= 150:
         importe_recibo = consumo * 1.00
     elif consumo <= 280:
